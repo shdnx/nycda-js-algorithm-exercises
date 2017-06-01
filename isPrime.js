@@ -1,10 +1,22 @@
-function isPrime() {
+function isPrime(num) {
+  if (num === 1) {
+    return false;
+  }
 
+  for (let a = 2; a <= Math.sqrt(num); a++) {
+    if (num % a === 0) {
+      return false;
+    }
+  }
+
+  return true;
 }
+
+module.exports = isPrime;
 
 describe('isPrime', function() {
   const assert = require("chai").assert;
-  
+
   it('should handle 1', function() {
     assert.isNotOk(isPrime(1));
   });

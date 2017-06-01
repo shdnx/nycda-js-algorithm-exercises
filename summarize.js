@@ -1,5 +1,35 @@
-function summarize() {
-  
+function summarize(nums) {
+  if (nums.length === 0) {
+    return {
+      min: null,
+      max: null,
+      sum: null,
+      avg: null
+    };
+  }
+
+  let min = nums[0];
+  let max = nums[0];
+  let sum = 0;
+
+  for (let num of nums) {
+    if (num < min) {
+      min = num;
+    }
+
+    if (num > max) {
+      max = num;
+    }
+
+    sum += num;
+  }
+
+  return {
+    min: min,
+    max: max,
+    sum: sum,
+    avg: sum / nums.length
+  };
 }
 
 describe('summarize', function() {

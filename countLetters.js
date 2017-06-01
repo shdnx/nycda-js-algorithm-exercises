@@ -1,5 +1,9 @@
-function countLetters() {
-
+function countLetters(text) {
+  let counts = {};
+  for (let char of text) {
+    counts[char] = (counts[char] || 0) + 1;
+  }
+  return counts;
 }
 
 describe('countLetters', function() {

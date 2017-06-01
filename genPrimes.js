@@ -1,5 +1,22 @@
-function genPrimes() {
+const isPrime = require("./isPrime.js");
 
+function genPrimes(n) {
+  if (n <= 0) {
+    return [];
+  }
+
+  let results = [ 2 ];
+  let candidate = 3;
+
+  while (results.length < n) {
+    if (isPrime(candidate)) {
+      results.push(candidate);
+    }
+
+    candidate += 2;
+  }
+
+  return results;
 }
 
 describe('genPrimes', function() {

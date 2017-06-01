@@ -1,5 +1,9 @@
-function countWords() {
-  
+function countWords(text) {
+  if (text === "") {
+    return 0;
+  }
+
+  return text.split(" ").length;
 }
 
 describe('countWords', function() {
