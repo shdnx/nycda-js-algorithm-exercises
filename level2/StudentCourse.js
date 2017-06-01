@@ -1,12 +1,88 @@
 const GRADE_PASS_THRESHOLD = 5.5;
 const GRADUATION_CREDITS = 30;
 
-class Student {
+function isPassingGrade(grade) {
+  return grade >= GRADE_PASS_THRESHOLD;
+}
 
+class Student {
+  constructor(name) {
+    this.name = name;
+    this.grades = {};
+    this.credits = 0;
+  }
+
+  getGrade(course) {
+    return this.grades[course.id] || null;
+  }
+
+  registerGrade(course, grade) {
+    if (!course.isStudentEnrolled(this)) {
+      console.log("Cannot register grade for student", this.name, "for course", course.id, ": student is not enrolled!");
+      return false;
+    }
+
+    if (isPassingGrade(grade)) {
+      this.credits += course.creditValue;
+    }
+
+    this.grades[course.id] = grade;
+
+    course.unenrollStudent(this);
+    return true;
+  }
+
+  canGraduate() {
+    return this.credits >= GRADUATION_CREDITS;
+  }
 }
 
 class Course {
-  
+  constructor(id, creditValue, capacity) {
+    this.id = id;
+    this.creditValue = creditValue;
+    this.studentCapacity = capacity;
+    this.enrolledStudents = [];
+  }
+
+  isStudentEnrolled(student) {
+    return this.enrolledStudents.indexOf(student) !== -1;
+  }
+
+  enrollStudent(student) {
+    let previousGrade = student.getGrade(this);
+    if (isPassingGrade(previousGrade)) {
+      // student has already finished this course
+      console.log("Cannot enroll student", student.name, "in course", this.id, ": student has already finished this course with grade", previousGrade);
+      return false;
+    }
+
+    if (this.isStudentEnrolled(student)) {
+      // student is already enrolled
+      console.log("Cannot enroll student", student.name, "in course", this.id, ": student is already enrolled!");
+      return false;
+    }
+
+    if (this.enrolledStudents.length === this.studentCapacity) {
+      // course is full
+      console.log("Cannot enroll student", student.name, "in course", this.id, ": course is at capacity!");
+      return false;
+    }
+
+    this.enrolledStudents.push(student);
+    return true;
+  }
+
+  unenrollStudent(student) {
+    let index = this.enrolledStudents.indexOf(student);
+    if (index === -1) {
+      console.log("Cannot unenroll student", student.name, "from course", this.id, ": is not enrolled!");
+      return false;
+    }
+
+    this.enrolledStudents.splice(index, 1);
+    return true;
+  }
 }
 
 const assert = require("chai").assert;
