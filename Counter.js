@@ -1,4 +1,16 @@
 class Counter {
+  constructor(initial) {
+    this.value = initial || 0;
+  }
+
+  current() {
+    return this.value;
+  }
+
+  next() {
+    this.value++;
+    return this.value;
+  }
 }
 
 describe('Counter', function() {

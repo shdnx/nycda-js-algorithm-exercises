@@ -1,5 +1,17 @@
 class City {
+  constructor(name) {
+    this.name = name;
+    this.links = [];
+  }
 
+  link(city) {
+    this.links.push(city);
+    city.links.push(this);
+  }
+
+  isLinked(city) {
+    return this.links.indexOf(city) !== -1;
+  }
 }
 
 describe('City', function() {
