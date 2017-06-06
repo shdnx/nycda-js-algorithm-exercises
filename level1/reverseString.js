@@ -3,8 +3,12 @@
  * You're not allowed to use String.prototype.reverse().
  * Returns the new string.
  */
-function reverseString() {
-
+function reverseString(string) {
+  let result = "";
+  for (let i = string.length - 1; i >= 0; i--) {
+    result += string[i];
+  }
+  return result;
 }
 
 describe('reverseString', function() {

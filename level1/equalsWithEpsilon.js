@@ -4,7 +4,15 @@
  * Returns true or false.
  */
 function equalsWithEpsilon(x, y, epsilon) {
+  let diff;
+  if (x <= y) {
+    diff = y - x;
+  }
+  else {
+    diff = x - y;
+  }
 
+  return diff <= epsilon;
 }
 
 describe('equalsWithEpsilon', function() {
