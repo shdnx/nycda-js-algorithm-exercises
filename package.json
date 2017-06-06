@@ -4,10 +4,10 @@
   "description": "Algorithm pracising exercises for the NYCDA Part-time Web Develpment Intensive course.",
   "scripts": {
     "test": "mocha",
-    "test-all": "mocha *.js || exit 0"
+    "test-all": "mocha --recursive . || exit 0"
   },
   "author": "Gabor Kozar",
-  "devDependencies": {
+  "dependencies": {
     "chai": "^4.0.1",
     "mocha": "^3.4.2"
   }
