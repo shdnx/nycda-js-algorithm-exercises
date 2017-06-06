@@ -1,3 +1,7 @@
+/**
+ * Determines whether the given number is a prime number, i.e. it is not divisible by any integers other than 1 and itself.
+ * Returns true or false.
+ */
 function isPrime(num) {
   if (num === 1) {
     return false;
@@ -12,6 +16,7 @@ function isPrime(num) {
   return true;
 }
 
+// "Exports" isPrime, making it available for use by other JavaScript files that "require" this file.
 module.exports = isPrime;
 
 describe('isPrime', function() {

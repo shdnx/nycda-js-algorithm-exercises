@@ -1,3 +1,6 @@
+/**
+ * Given a string, counts the number of words inside it. Each word is separated by a single space character.
+ */
 function countWords(text) {
   if (text === "") {
     return 0;

@@ -1,3 +1,6 @@
+/**
+ * Represents a counter that remembers its value and can be used to count up.
+ */
 class Counter {
   constructor(initial) {
     this.value = initial || 0;

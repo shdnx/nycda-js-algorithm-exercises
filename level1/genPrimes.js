@@ -1,5 +1,8 @@
 const isPrime = require("./isPrime.js");
 
+/**
+ * Generates the first N prime numbers.
+ */
 function genPrimes(n) {
   if (n <= 0) {
     return [];

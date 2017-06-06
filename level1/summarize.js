@@ -1,3 +1,10 @@
+/**
+ * Given an array of numbers, it performs some analysis on it and returns the results as an object. The attributes of the object should be as follows:
+ * - min: the smallest number in the array
+ * - max: the largest number in the array
+ * - sum: the sum of all numbers in the array
+ * - avg: the average of all numbers in the array
+ */
 function summarize(nums) {
   if (nums.length === 0) {
     return {
