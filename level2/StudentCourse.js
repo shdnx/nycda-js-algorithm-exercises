@@ -1,3 +1,20 @@
+/**
+ * You're writing a small application that handles some of the education tasks associated with universities.
+ * You will have Student and Course objects.
+ * You shall implement the functionality for the following:
+ * - each Student has a name, number of credits successfully obtained, and grades
+ * - each Course has an ID, credit value and student capacity
+ * - a Course can enroll a Student if and only if:
+ *   - the course is not full
+ *   - the student isn't enrolled into that course yet
+ *   - the student hasn't already successfully completed that course
+ * - a grade can be registered to a Student for completion of a Course when the student is enrolled to the course
+ * - if the grade is below 5.5, the student is considered to have failed the course, and shall not receive its credit value
+ * - otherwise, the student shall receive the credit value of the course as credits
+ * - each Student should remember what grade it received for what course, if any
+ * - a Student can graduate if he has at least 30 credits
+ */
+
 const GRADE_PASS_THRESHOLD = 5.5;
 const GRADUATION_CREDITS = 30;
 

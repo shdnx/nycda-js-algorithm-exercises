@@ -1,3 +1,7 @@
+/**
+ * Given a string, it "camelizes" by uppercasing every character at an even index, and lowercasing every character at an odd index.
+ * Returns the new string.
+ */
 function camelize() {
   
 }

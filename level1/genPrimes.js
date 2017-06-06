@@ -1,3 +1,6 @@
+/**
+ * Generates the first N prime numbers.
+ */
 function genPrimes() {
 
 }
