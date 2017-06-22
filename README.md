@@ -41,3 +41,16 @@ Level1:
 10. countLetters.js
 11. summarize.js
 12. genPrimes.js
+
+Updating your local copy
+============================
+
+Occassionally, I will make updates to this repository, which will mainly involve creating new exercises or reorganising existing ones. When this happens, you can update your local repository like so:
+
+    1. Create a commit with all your local changes.
+    2. `git fetch origin master`
+    3. `git rebase origin/master`
+
+You might have merge conflicts after the last step. If you do, you'll have to sort them out yourself: make sure to incorporate all of my changes (i.e. the changes coming from the remote) into your local copy.
+
+Once you've fixed the conflicts in the files, use `git add` to mark those conflicts as resolved, and then execute `git rebase --continue`. You may have to repeat this until the rebase is complete.
