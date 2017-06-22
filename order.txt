@@ -1,8 +1,0 @@
-1. camelize.js
-2. countWords.js
-3. Counter.js
-4. City.js
-5. isPrime.js
-6. countLetters.js
-7. genPrimes.js
-8. summarize.js
