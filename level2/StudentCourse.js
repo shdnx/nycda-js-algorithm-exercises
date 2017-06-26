@@ -26,26 +26,26 @@ class Course {
   
 }
 
-const assert = require("chai").assert;
-
 describe('Student', function() {
+  const assert = require("chai").assert;
+
   it('should initially be empty', function() {
     let blankStudent = new Student("Potato");
-    assert.equal(blankStudent.name, "Potato");
-    assert.equal(blankStudent.credits, 0);
-    assert.deepEqual(blankStudent.grades, {});
+    assert.equal("Potato", blankStudent.name);
+    assert.equal(0, blankStudent.credits);
+    assert.deepEqual({}, blankStudent.grades);
 
-    assert.isNotOk(blankStudent.canGraduate());
+    assert.isFalse(blankStudent.canGraduate());
   });
 
   it('should be able to be enrolled to a Course', function() {
     let student = new Student("Potato");
     let course = new Course("PTWDI", GRADUATION_CREDITS, 5);
 
-    assert.isNotOk(course.isStudentEnrolled(student));
+    assert.isFalse(course.isStudentEnrolled(student));
 
     assert.isOk(course.enrollStudent(student));
-    assert.isOk(course.isStudentEnrolled(student));
+    assert.isTrue(course.isStudentEnrolled(student));
   });
 
   it('cannot be enrolled to the same Course twice', function() {
@@ -69,11 +69,11 @@ describe('Student', function() {
 
     assert.isOk(course.enrollStudent(student));
     assert.isOk(student.registerGrade(course, 6));
-    assert.equal(student.getGrade(course), 6);
-    assert.equal(student.credits, 5);
+    assert.equal(6, student.getGrade(course));
+    assert.equal(5, student.credits);
 
     // student is unenrolled after getting a grade for the course
-    assert.isNotOk(course.isStudentEnrolled(student));
+    assert.isFalse(course.isStudentEnrolled(student));
   });
 
   it('should be able to fail a course and not get credits', function() {
@@ -82,8 +82,8 @@ describe('Student', function() {
 
     assert.isOk(course.enrollStudent(student));
     assert.isOk(student.registerGrade(course, 4));
-    assert.equal(student.getGrade(course), 4);
-    assert.equal(student.credits, 0);
+    assert.equal(4, student.getGrade(course));
+    assert.equal(0, student.credits);
   });
 
   it('should be able to take up a failed course again', function() {
@@ -95,7 +95,7 @@ describe('Student', function() {
 
     assert.isOk(course.enrollStudent(student));
     assert.isOk(student.registerGrade(course, 6));
-    assert.equal(student.getGrade(course), 6);
+    assert.equal(6, student.getGrade(course));
   });
 
   it('should be able to graduate with enough credits', function() {
@@ -104,8 +104,8 @@ describe('Student', function() {
 
     assert.isOk(course.enrollStudent(student));
     assert.isOk(student.registerGrade(course, 9));
-    assert.equal(student.credits, GRADUATION_CREDITS);
-    assert.isOk(student.canGraduate());
+    assert.equal(GRADUATION_CREDITS, student.credits);
+    assert.isTrue(student.canGraduate());
   });
 
   it('cannot enroll to a full course', function() {

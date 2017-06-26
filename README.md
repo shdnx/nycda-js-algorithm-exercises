@@ -38,9 +38,10 @@ Level1:
 7. reverseString.js
 8. greet.js
 9. isPalindrome.js
-10. countLetters.js
-11. summarize.js
-12. genPrimes.js
+10. isDiagonal.js
+11. countLetters.js
+12. summarize.js
+13. genPrimes.js
 
 Updating your local copy
 ============================

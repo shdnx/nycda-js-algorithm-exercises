@@ -9,14 +9,14 @@ describe('City', function() {
   const assert = require("chai").assert;
 
   it('should remember its name', function() {
-    assert.equal((new City("Amsterdam")).name, "Amsterdam");
+    assert.equal("Amsterdam", (new City("Amsterdam")).name);
   });
 
   it('should not be initially linked', function() {
     let ams = new City("Amsterdam");
     let paris = new City("Paris");
-    assert.isNotOk(ams.isLinked(paris));
-    assert.isNotOk(paris.isLinked(ams));
+    assert.isFalse(ams.isLinked(paris));
+    assert.isFalse(paris.isLinked(ams));
   });
 
   it('should be able to get linked', function() {
@@ -26,8 +26,8 @@ describe('City', function() {
     ams.link(paris);
 
     // links are symmetric!
-    assert.isOk(ams.isLinked(paris));
-    assert.isOk(paris.isLinked(ams));
+    assert.isTrue(ams.isLinked(paris));
+    assert.isTrue(paris.isLinked(ams));
   });
 
   it('should work with more cities', function() {
@@ -38,12 +38,12 @@ describe('City', function() {
     ams.link(london);
     london.link(berlin);
 
-    assert.isOk(ams.isLinked(london));
-    assert.isOk(london.isLinked(ams));
-    assert.isNotOk(ams.isLinked(berlin));
-    assert.isNotOk(berlin.isLinked(ams));
+    assert.isTrue(ams.isLinked(london));
+    assert.isTrue(london.isLinked(ams));
+    assert.isFalse(ams.isLinked(berlin));
+    assert.isFalse(berlin.isLinked(ams));
 
-    assert.isOk(london.isLinked(berlin));
-    assert.isOk(berlin.isLinked(london));
+    assert.isTrue(london.isLinked(berlin));
+    assert.isTrue(berlin.isLinked(london));
   });
 });

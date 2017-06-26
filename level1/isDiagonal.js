@@ -7,33 +7,33 @@ describe('isDiagonal', function() {
   const assert = require('chai').assert;
 
   it('should work on empty matrices', function() {
-    assert.isOk(isDiagonal([]));
+    assert.isTrue(isDiagonal([]));
   });
 
   // a trivial matrix is one that only contains a single value
   it('should work on trivial matrices', function() {
-    assert.isOk(isDiagonal([ [ 5 ] ]));
+    assert.isTrue(isDiagonal([ [ 5 ] ]));
   });
 
   it('should detect diagonal matrices', function() {
-    assert.isOk(isDiagonal([
+    assert.isTrue(isDiagonal([
       [ 2, 0 ],
       [ 0, 1 ]
     ]));
 
-    assert.isOk(isDiagonal([
+    assert.isTrue(isDiagonal([
       [ 0, 0, 0 ],
       [ 0, 9, 0 ],
       [ 0, 0, 3 ]
     ]));
 
-    assert.isOk(isDiagonal([
+    assert.isTrue(isDiagonal([
       [ 1, 0, 0 ],
       [ 0, 1, 0 ],
       [ 0, 0, 1 ]
     ]));
 
-    assert.isOk(isDiagonal([
+    assert.isTrue(isDiagonal([
       [ 7, 0, 0, 0 ],
       [ 0, 1, 0, 0 ],
       [ 0, 0, 4, 0 ],
@@ -42,23 +42,23 @@ describe('isDiagonal', function() {
   });
 
   it('should not have false positives', function() {
-    assert.isNotOk(isDiagonal([
+    assert.isFalse(isDiagonal([
       [ 1, 2 ],
       [ 0, 0 ]
     ]));
 
-    assert.isNotOk(isDiagonal([
+    assert.isFalse(isDiagonal([
       [ 2, 0 ],
       [ 1, 1 ]
     ]));
 
-    assert.isNotOk(isDiagonal([
+    assert.isFalse(isDiagonal([
       [ 0, 0, 5 ],
       [ 0, 5, 0 ],
       [ 5, 0, 0 ]
     ]));
 
-    assert.isNotOk(isDiagonal([
+    assert.isFalse(isDiagonal([
       [ 4, 0, 0, 0 ],
       [ 0, 0, 9, 3 ],
       [ 0, 0, 0, 0 ],
