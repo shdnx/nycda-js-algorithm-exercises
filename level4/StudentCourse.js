@@ -23,7 +23,7 @@ class Student {
 }
 
 class Course {
-  
+
 }
 
 describe('Student', function() {
