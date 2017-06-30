@@ -6,7 +6,7 @@ class City {
 }
 
 describe('City', function() {
-  const assert = require("chai").assert;
+  const assert = require('chai').assert;
 
   it('should remember its name', function() {
     assert.equal("Amsterdam", (new City("Amsterdam")).name);
