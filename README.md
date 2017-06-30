@@ -35,10 +35,11 @@ Level 1:
 2. camelize
 3. countWords
 4. Counter
-5. isPrime
-6. reverseString
-7. isPalindrome
-8. countLetters
+5. isSorted
+6. isPrime
+7. reverseString
+8. isPalindrome
+9. countLetters
 
 Level 2:
 1. City
