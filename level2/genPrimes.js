@@ -1,29 +1,36 @@
-const isPrime = require("./isPrime.js");
-
 /**
  * Generates the first N prime numbers.
  */
-function genPrimes(n) {
-  if (n <= 0) {
-    return [];
+
+function isPrime(candidate, previousPrimes) {
+  for (const previousPrime of previousPrimes) {
+    if (candidate % previousPrime === 0)
+      return false;
   }
 
-  let results = [ 2 ];
+  return true;
+}
+
+function genPrimes(n) {
+  if (n <= 0)
+    return [];
+
+  let primes = [ 2 ];
   let candidate = 3;
 
-  while (results.length < n) {
-    if (isPrime(candidate)) {
-      results.push(candidate);
+  while (primes.length < n) {
+    if (isPrime(candidate, primes)) {
+      primes.push(candidate);
     }
 
     candidate += 2;
   }
 
-  return results;
+  return primes;
 }
 
 describe('genPrimes', function() {
-  const assert = require("chai").assert;
+  const assert = require('chai').assert;
 
   it('should be able to generate 0 primes', function() {
     assert.deepEqual([], genPrimes(0));
