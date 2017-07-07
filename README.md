@@ -45,9 +45,10 @@ Level 1:
 Level 2:
 1. City
 2. isDiagonal
-3. summarize
-4. genPrimes
-5. greet
+3. map
+4. summarize
+5. genPrimes
+6. greet
 
 Level 3:
 1. isCorrectlyBracketed
