@@ -1,0 +1,5 @@
+Ideas
+ - Higher order functions: map, filter, aggreggate/reduce/fold
+
+More inspiration:
+ - https://performancejs.com/post/hde6d32/The-Best-List-of-Frontend-JavaScript-Interview-Questions-(written-by-a-Frontend-Engineer)
