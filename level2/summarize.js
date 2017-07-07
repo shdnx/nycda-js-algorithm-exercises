@@ -40,22 +40,24 @@ function summarize(nums) {
 }
 
 describe('summarize', function() {
-  const assert = require("chai").assert;
+  const assert = require('chai').assert;
 
   it('should work for empty array', function() {
-    assert.deepEqual(summarize([]), { min: null, max: null, sum: null, avg: null });
+    assert.deepEqual(summarize([]), {
+      min: null,
+      max: null,
+      sum: null,
+      avg: null
+    });
   });
 
   it('should work for trivial arrays', function() {
-    for (let i = 0; i < 5; i++) {
-      let randomNum = Math.random() * 1000;
-      assert.deepEqual(summarize([ randomNum ]), {
-        min: randomNum,
-        max: randomNum,
-        sum: randomNum,
-        avg: randomNum
-      });
-    }
+    assert.deepEqual(summarize([ 42 ]), {
+      min: 42,
+      max: 42,
+      sum: 42,
+      avg: 42
+    });
   });
 
   it('should work on simple arrays', function() {

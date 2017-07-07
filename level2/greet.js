@@ -25,7 +25,7 @@ function greet(names) {
 }
 
 describe('greet', function() {
-  const assert = require("chai").assert;
+  const assert = require('chai').assert;
 
   it('generates a nameless greeting for zero names', function() {
     assert.equal("Hi!", greet());
