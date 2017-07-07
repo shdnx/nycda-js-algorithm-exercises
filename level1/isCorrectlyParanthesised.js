@@ -2,7 +2,22 @@
  * Detects whether a given string is correctly paranthesised, only considering parantheses, i.e. '(' and ')'.
  * Returns true or false.
  */
-function isCorrectlyParanthesised() {}
+function isCorrectlyParanthesised(text) {
+  let balance = 0;
+
+  for (let char of text) {
+    if (char === '(') {
+      balance++;
+    } else if (char === ')') {
+      if (balance === 0)
+        return false;
+
+      balance--;
+    }
+  }
+
+  return balance === 0;
+}
 
 describe('isCorrectlyParanthesised', function() {
   const assert = require("chai").assert;
