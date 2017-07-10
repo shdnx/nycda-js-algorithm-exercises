@@ -35,26 +35,26 @@ Level 1:
 2. camelize
 3. countWords
 4. Counter
-5. isCorrectlyParanthesised
-6. isSorted
-7. isPrime
-8. reverseString
-9. isPalindrome
-10. countLetters
+5. isSorted
+6. isPrime
+7. reverseString
+8. isPalindrome
+9. countLetters
 
 Level 2:
 1. City
 2. isDiagonal
 3. map
 4. summarize
-5. genPrimes
-6. greet
+5. isCorrectlyParanthesised
+6. genPrimes
+7. greet
 
 Level 3:
-1. isCorrectlyBracketed
 
 Level 4:
-1. StudentCourse
+1. isCorrectlyBracketed
+2. StudentCourse
 
 Performing the exercises
 =============================
