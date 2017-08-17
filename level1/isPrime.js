@@ -2,13 +2,13 @@
  * Determines whether the given number is a prime number, i.e. it is not divisible by any integers other than 1 and itself.
  * Returns true or false.
  */
-function isPrime() {
-
+function isPrime(n) {
+  return n < 2 ? false : Array.from( Array(Math.floor(Math.sqrt(n))-1), (x,i) => i+2 ).every(i => n % i !== 0)
 }
 
 describe('isPrime', function() {
   const assert = require("chai").assert;
-  
+
   it('should handle 1', function() {
     assert.isNotOk(isPrime(1));
   });
