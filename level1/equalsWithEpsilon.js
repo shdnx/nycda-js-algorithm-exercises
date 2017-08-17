@@ -4,7 +4,7 @@
  * Returns true or false.
  */
 function equalsWithEpsilon(x, y, epsilon) {
-
+  return (x > y ? x - y : y - x) <= epsilon;
 }
 
 describe('equalsWithEpsilon', function() {
