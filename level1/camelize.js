@@ -2,8 +2,8 @@
  * Given a string, it "camelizes" by uppercasing every character at an even index, and lowercasing every character at an odd index.
  * Returns the new string.
  */
-function camelize() {
-  
+function camelize(s) {
+  return s.length <= 1 ? s.toUpperCase() : (s[0].toUpperCase() + s[1].toLowerCase() + camelize(s.slice(2)))
 }
 
 describe('camelize', function() {

@@ -1,7 +1,9 @@
 /**
  * Given an array of numbers, it checks whether it is sorted (in the ascending order). Returns true or false.
  */
-function isSorted() {}
+function isSorted(a) {
+  return a.length <= 1 || (a[0] <= a[1] && isSorted(a.slice(1)))
+}
 
 describe('isSorted', function() {
   const assert = require('chai').assert;

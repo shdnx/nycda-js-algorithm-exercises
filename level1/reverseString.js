@@ -3,8 +3,8 @@
  * You're not allowed to use String.prototype.reverse().
  * Returns the new string.
  */
-function reverseString() {
-
+function reverseString(s) {
+  return s === "" ? "" : reverseString(s.slice(1)) + s[0]
 }
 
 describe('reverseString', function() {
