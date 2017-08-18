@@ -1,13 +1,15 @@
 /**
  * Given a string, returns an object containing attributes for each letter occuring in the string, with the associated value being the number of occurances of that character in the string.
  */
-function countLetters() {
-
+function countLetters(s) {
+  const o = {};
+  s.split("").forEach(c => o[c] === undefined ? o[c] = 1 : o[c] += 1);
+  return o;
 }
 
 describe('countLetters', function() {
   const assert = require("chai").assert;
-  
+
   it('should work with empty strings', function() {
     assert.deepEqual({}, countLetters(""));
   });
