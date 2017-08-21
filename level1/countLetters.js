@@ -3,7 +3,10 @@
  */
 function countLetters(s) {
   const o = {};
-  s.split("").forEach(c => o[c] === undefined ? o[c] = 1 : o[c] += 1);
+
+  for (c of s.split("")) {
+    o[c] = (o[c] || 0) + 1
+  }
   return o;
 }
 

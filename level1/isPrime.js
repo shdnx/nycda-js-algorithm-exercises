@@ -3,7 +3,7 @@
  * Returns true or false.
  */
 function isPrime(n) {
-  return n < 2 ? false : Array.from( Array(Math.floor(Math.sqrt(n))-1), (x,i) => i+2 ).filter(i => i % 2 === 0).every(i => n % i !== 0)
+  return n < 2 ? false : Array.from(Array(n-2), (x,i) => i+2).every(i => n % i !== 0)
 }
 
 describe('isPrime', function() {

@@ -4,7 +4,7 @@
  * Returns the new string.
  */
 function reverseString(s) {
-  return s === "" ? "" : reverseString(s.slice(1)) + s[0]
+  return s ? reverseString(s.slice(1)) + s[0] : ""
 }
 
 describe('reverseString', function() {

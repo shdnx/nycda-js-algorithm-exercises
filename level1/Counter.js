@@ -2,8 +2,19 @@
  * Represents a counter that remembers its value and can be used to count up.
  */
 class Counter {
-}
+  constructor(initial) {
+    this.value = initial || 0;
+  }
 
+  current() {
+    return this.value;
+  }
+
+  next() {
+    this.value++;
+    return this.value;
+  }
+}
 describe('Counter', function() {
   const assert = require("chai").assert;
 
