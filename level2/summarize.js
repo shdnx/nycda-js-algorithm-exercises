@@ -14,11 +14,11 @@ function summarize(a) {
   };
 
   if (a.length > 0) {
-    const minAndMax = a.reduce((l, v) => [Math.min(l[0], v), Math.max(l[1], v)], [a[0], a[0]]);
+    const minMaxSum = a.reduce((l, v) => [Math.min(l[0], v), Math.max(l[1], v), l[2] + v], [a[0], a[0], 0]);
 
-    o.min = minAndMax[0];
-    o.max = minAndMax[1];
-    o.sum = a.reduce((sum, v) => sum + v, 0)
+    o.min = minMaxSum[0];
+    o.max = minMaxSum[1];
+    o.sum = minMaxSum[2];
     o.avg = o.sum / a.length;
   }
 
