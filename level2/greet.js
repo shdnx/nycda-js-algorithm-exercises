@@ -2,7 +2,23 @@
  * Generates a string greeting for the given array of names. Note that the parameter is optional.
  * In the greeting you should use the Oxford comma. For example: greet([ "A", "B", "C" ]) === "Hi A, B, and C!" and not "Hi A, B and C!" (notice the comma before the "and").
  */
-function greet() {}
+function greet(names) {
+  names = names || []
+
+  if (names.length === 0) {
+    return "Hi!"
+  }
+
+  names = names.map(name => name ? name : "Anonymous");
+
+  if (names.length === 1) {
+    return `Hi ${names[0]}!`;
+  }
+
+  let last = names.pop();
+
+  return `Hi ${names.join(", ")}, and ${last}!`;
+}
 
 describe('greet', function() {
   const assert = require('chai').assert;

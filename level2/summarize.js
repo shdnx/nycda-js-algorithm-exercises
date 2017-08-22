@@ -5,8 +5,24 @@
  * - sum: the sum of all numbers in the array
  * - avg: the average of all numbers in the array
  */
-function summarize() {
+function summarize(a) {
+  const o = {
+    min : null,
+    max : null,
+    sum : null,
+    avg : null
+  };
 
+  if (a.length > 0) {
+    const minAndMax = a.reduce((l, v) => [Math.min(l[0], v), Math.max(l[1], v)], [a[0], a[0]]);
+
+    o.min = minAndMax[0];
+    o.max = minAndMax[1];
+    o.sum = a.reduce((sum, v) => sum + v, 0)
+    o.avg = o.sum / a.length;
+  }
+
+  return o;
 }
 
 describe('summarize', function() {

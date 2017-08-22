@@ -2,7 +2,19 @@
  * Represents a city. Cities can be "linked" together, meaning that you can reach one city from the other. This is always a symmetric relation, meaning that if you can reach city X from Y, then you can also reach Y from X.
  */
 class City {
+  constructor(name) {
+    this.name = name
+    this.linkedTo = new Set()
+  }
 
+  link (city) {
+    this.linkedTo.add(city)
+    city.linkedTo.add(this)
+  }
+
+  isLinked (city) {
+    return this.linkedTo.has(city)
+  }
 }
 
 describe('City', function() {
