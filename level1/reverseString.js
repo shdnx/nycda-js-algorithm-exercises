@@ -15,19 +15,19 @@ describe('reverseString', function() {
   const assert = require("chai").assert;
 
   it('should work for empty string', function() {
-    assert.equal("", reverseString(""));
+    assert.equal(reverseString(""), "");
   });
 
   it('should work for single-character strings', function() {
-    assert.equal("a", reverseString("a"));
-    assert.equal(" ", reverseString(" "));
-    assert.equal("*", reverseString("*"));
+    assert.equal(reverseString("a"), "a");
+    assert.equal(reverseString(" "), " ");
+    assert.equal(reverseString("*"), "*");
   });
 
   it('should work on non-trivial strings', function() {
-    assert.equal("abc", reverseString("cba"));
-    assert.equal("raboof", reverseString("foobar"));
-    assert.equal("potato", reverseString("otatop"));
-    assert.equal("foof", reverseString("foof"));
+    assert.equal(reverseString("cba"), "abc");
+    assert.equal(reverseString("foobar"), "raboof");
+    assert.equal(reverseString("otatop"), "potato");
+    assert.equal(reverseString("foof"), "foof");
   });
 });

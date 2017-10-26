@@ -42,7 +42,10 @@ describe('isCorrectlyParanthesised', function() {
 
   it('should detect incorrectly paranthesised text', function() {
     assert.isFalse(isCorrectlyParanthesised("("));
+    assert.isFalse(isCorrectlyParanthesised(")("));
     assert.isFalse(isCorrectlyParanthesised("(()"));
+    assert.isFalse(isCorrectlyParanthesised("))(("));
+    assert.isFalse(isCorrectlyParanthesised(")(()"));
     assert.isFalse(isCorrectlyParanthesised("(((("));
     assert.isFalse(isCorrectlyParanthesised("))()"));
     assert.isFalse(isCorrectlyParanthesised("(Test("));

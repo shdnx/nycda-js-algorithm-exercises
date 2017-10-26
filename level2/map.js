@@ -18,25 +18,25 @@ describe('map', function() {
 
   it('should leave an empty array alone', function() {
     // (x) => x * 2 is equivalent to function(x) { return x * 2; }
-    assert.deepEqual([], map([], (x) => x * 2));
-    assert.deepEqual([], map([], (x) => x));
+    assert.deepEqual(map([], (x) => x * 2), []);
+    assert.deepEqual(map([], (x) => x), []);
   });
 
   it('should process each item in the array', function() {
-    assert.deepEqual([ 1, 4, 9 ], map([ 1, 2, 3 ], (x) => x * x));
-    assert.deepEqual([ 2, 3, 4 ], map([ 1, 2, 3 ], (x) => x + 1));
-    assert.deepEqual([ "x+", "y+", "z+" ], map([ "x", "y", "z" ], (x) => x + "+"));
-    assert.deepEqual([ 10, 20, 30 ], map([ 10, 20, 30 ], (x) => x));
+    assert.deepEqual(map([ 1, 2, 3 ], (x) => x * x), [ 1, 4, 9 ]);
+    assert.deepEqual(map([ 1, 2, 3 ], (x) => x + 1), [ 2, 3, 4 ]);
+    assert.deepEqual(map([ "x", "y", "z" ], (x) => x + "+"), [ "x+", "y+", "z+" ]);
+    assert.deepEqual(map([ 10, 20, 30 ], (x) => x), [ 10, 20, 30 ]);
   });
 
   it('does not need to preserve the original item type', function() {
-    assert.deepEqual([ true, false, true ], map([ 2, -4, 1 ], (x) => x >= 0));
-    assert.deepEqual([ "1", "2", "3" ], map([ 1, 2, 3 ], (x) => x.toString()));
+    assert.deepEqual(map([ 2, -4, 1 ], (x) => x >= 0), [ true, false, true ]);
+    assert.deepEqual(map([ 1, 2, 3 ], (x) => x.toString()), [ "1", "2", "3" ]);
   });
 
   it('should leave the original array alone', function() {
     let array1 = [ 1, 2, 3 ];
-    assert.deepEqual([ 10, 20, 30 ], map(array1, (x) => x * 10));
-    assert.deepEqual([ 1, 2, 3 ], array1);
+    assert.deepEqual(map(array1, (x) => x * 10), [ 10, 20, 30 ]);
+    assert.deepEqual(array1, [ 1, 2, 3 ]);
   });
 });
