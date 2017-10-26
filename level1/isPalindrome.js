@@ -1,29 +1,31 @@
 /**
  * Determines whether the given string is a palindrome, i.e. if you were to reverse the order of the characters inside the string, you would get back the original string.
  */
-function isPalindrome() {}
+function isPalindrome(text) {
+  return text === "";
+}
 
 describe('isPalindrome', function() {
   const assert = require("chai").assert;
 
   it('works for empty string', function() {
-    assert.isOk(isPalindrome(''));
+    assert.isTrue(isPalindrome(''));
   });
 
   it('works for single characters', function() {
-    assert.isOk(isPalindrome('x'));
-    assert.isOk(isPalindrome('c'));
+    assert.isTrue(isPalindrome('x'));
+    assert.isTrue(isPalindrome('c'));
   });
 
   it('works for double characters', function() {
-    assert.isOk(isPalindrome('xx'));
-    assert.isOk(isPalindrome('gg'));
-    assert.isNotOk(isPalindrome('af'));
-    assert.isNotOk(isPalindrome('yt'));
+    assert.isTrue(isPalindrome('xx'));
+    assert.isTrue(isPalindrome('gg'));
+    assert.isFalse(isPalindrome('af'));
+    assert.isFalse(isPalindrome('yt'));
   });
 
   it('works for words', function() {
-    assert.isOk(isPalindrome('racecar'));
-    assert.isNotOk(isPalindrome('potato'));
+    assert.isTrue(isPalindrome('racecar'));
+    assert.isFalse(isPalindrome('potato'));
   });
 });

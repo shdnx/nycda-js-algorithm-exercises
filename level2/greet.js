@@ -8,22 +8,22 @@ describe('greet', function() {
   const assert = require('chai').assert;
 
   it('generates a nameless greeting for zero names', function() {
-    assert.equal("Hi!", greet());
-    assert.equal("Hi!", greet([]));
+    assert.equal(greet(), "Hi!");
+    assert.equal(greet([]), "Hi!");
   });
 
   it('generates a simple greeting for one name', function() {
-    assert.equal("Hi Joe!", greet([ "Joe" ]));
-    assert.equal("Hi Potato!", greet([ "Potato" ]));
+    assert.equal(greet([ "Joe" ]), "Hi Joe!");
+    assert.equal(greet([ "Potato" ]), "Hi Potato!");
   });
 
   it('greets all names', function() {
-    assert.equal("Hi Joe, Foo, and Bar!", greet([ "Joe", "Foo", "Bar" ]));
-    assert.equal("Hi Bla, Uh, Baz, and Example!", greet([ "Bla", "Uh", "Baz", "Example" ]));
+    assert.equal(greet([ "Joe", "Foo", "Bar" ]), "Hi Joe, Foo, and Bar!");
+    assert.equal(greet([ "Bla", "Uh", "Baz", "Example" ]), "Hi Bla, Uh, Baz, and Example!");
   });
 
   it('generates a greeting for Anonymous for empty names', function() {
-    assert.equal("Hi Anonymous!", greet([ "" ]));
-    assert.equal("Hi Eve, Frank, Anonymous, and Peter!", greet([ "Eve", "Frank", "", "Peter" ]));
+    assert.equal(greet([ "" ]), "Hi Anonymous!");
+    assert.equal(greet([ "Eve", "Frank", "", "Peter" ]), "Hi Eve, Frank, Anonymous, and Peter!");
   });
 });

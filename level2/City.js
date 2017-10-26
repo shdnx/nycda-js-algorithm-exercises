@@ -9,7 +9,7 @@ describe('City', function() {
   const assert = require('chai').assert;
 
   it('should remember its name', function() {
-    assert.equal("Amsterdam", (new City("Amsterdam")).name);
+    assert.equal((new City("Amsterdam")).name, "Amsterdam");
   });
 
   it('should not be initially linked', function() {
