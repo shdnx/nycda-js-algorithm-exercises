@@ -1,8 +1,8 @@
 /**
  * Determines whether the given string is a palindrome, i.e. if you were to reverse the order of the characters inside the string, you would get back the original string.
  */
-function isPalindrome(text) {
-  return text === "";
+function isPalindrome() {
+
 }
 
 describe('isPalindrome', function() {
