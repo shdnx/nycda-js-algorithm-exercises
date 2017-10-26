@@ -23,8 +23,6 @@ Tests will be run using [Mocha](https://mochajs.org/):
  - To test multiple files: `npm test levelN/file1.js levelN/file2.js ...`
  - To run all tests: `npm run test-all`
 
-Note that with the `npm test` command, the path argument is always relative to the root directory of this repository, i.e. to the directory where `package.json` is.
-
 The test implementations currently all use the `assert` library provided by [Chai](http://chaijs.com/).
 
 Suggested order of exercises
