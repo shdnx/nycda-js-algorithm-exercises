@@ -9,6 +9,7 @@ OSX:
 
 Ubuntu:
  - `sudo apt-get install nodejs`
+ - NOTE: if Node is not found after installation, try running `sudo apt-get install nodejs-legacy` as well
 
 Setup
 ========================
